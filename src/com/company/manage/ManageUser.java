@@ -15,7 +15,15 @@ public class ManageUser implements GeneralManage<User> {
     public ManageUser() throws FileNotFoundException {
         userList = FileUserCSV.readFromFile();
     }
-
+    public int login(String username, String password) {
+        for (User user: userList) {
+            if (user.getUsername().equals(username) && user.getPassword().equals(password)) {
+                currentUser = user;
+                return 1;
+            }
+        }
+        return 0;
+    }
     public List<User> getUserList() {
         return userList;
     }
