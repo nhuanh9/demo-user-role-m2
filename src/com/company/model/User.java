@@ -5,12 +5,14 @@ public class User {
     private String username;
     private String password;
     private Role role;
+    private String status;
 
-    public User(int id, String username, String password, Role role) {
+    public User(int id, String username, String password, Role role, String status) {
         this.id = id;
         this.username = username;
         this.password = password;
         this.role = role;
+        this.status = status;
     }
 
     public User() {
@@ -50,6 +52,6 @@ public class User {
 
     @Override
     public String toString() {
-        return id + "," + username +"," + password + "," + role.getId()+"\n";
+        return id + "," + username + "," + password + "," + role.getId() + "," + status + "\n";
     }
 }
