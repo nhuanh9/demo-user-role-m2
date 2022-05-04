@@ -11,6 +11,7 @@ import java.util.List;
 public class ManageUser implements GeneralManage<User> {
     List<User> userList = new ArrayList<>();
     public static User currentUser = null;
+
     public ManageUser() throws FileNotFoundException {
         userList = FileUserCSV.readFromFile();
     }
@@ -53,14 +54,14 @@ public class ManageUser implements GeneralManage<User> {
 
     @Override
     public void findAll() {
-        for (int i=0; i<userList.size(); i++) {
+        for (int i = 0; i < userList.size(); i++) {
             System.out.println(userList.get(i));
         }
     }
 
     @Override
     public int findIndexById(int id) {
-        for (int i=0; i<userList.size(); i++) {
+        for (int i = 0; i < userList.size(); i++) {
             if (userList.get(i).getId() == id) {
                 return i;
             }

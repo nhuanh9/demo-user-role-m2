@@ -30,6 +30,7 @@ public class FileRoleCSV {
     public static void writeToFile(List<Role> list) throws FileNotFoundException {
         File roleFile = new File("role.csv");
         PrintWriter printWriter = new PrintWriter(roleFile);
+        printWriter.print("id,name,description\n");
         for ( int i=0; i< list.size(); i++) {
             printWriter.print(list.get(i));
         }

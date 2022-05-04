@@ -34,8 +34,9 @@ public class FileUserCSV {
     }
 
     public static void writeToFile(List<User> list) throws FileNotFoundException {
-        File roleFile = new File("role.csv");
+        File roleFile = new File("user.csv");
         PrintWriter printWriter = new PrintWriter(roleFile);
+        printWriter.print("id,username,password,role,status\n");
         for ( int i=0; i< list.size(); i++) {
             printWriter.print(list.get(i));
         }
